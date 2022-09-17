@@ -18,7 +18,7 @@ public class Anomaly : MonoBehaviour
         TDL.objects.Add(gameObject);
     }
 
-    void update()
+     void Update()
     {
         if(completed == true)
         {

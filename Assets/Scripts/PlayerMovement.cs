@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb; //Getting the rigidbody
+    [HideInInspector]
+    public Rigidbody2D rb; //Getting the rigidbody
    
     public float speed = 2; //Movement Speed value
 
