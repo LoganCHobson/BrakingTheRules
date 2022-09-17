@@ -5,7 +5,7 @@ using UnityEngine;
 public class Anomaly : MonoBehaviour
 {
     Renderer m_paint;
-    Rigidbody body; 
+    Rigidbody2D body; 
     public int anomalySetter;
 
     public ToDoList TDL;
@@ -15,10 +15,10 @@ public class Anomaly : MonoBehaviour
 
     void Awake()
     {
-        TDL.objects.Add(gameObject);
+        //TDL.objects.Add(gameObject);
     }
 
-    void update()
+    void Update()
     {
         if(completed == true)
         {
@@ -40,7 +40,7 @@ public class Anomaly : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            body = GetComponent<Rigidbody>();
+            body = GetComponent<Rigidbody2D>();
             body.isKinematic = false;
             
         }
@@ -53,10 +53,18 @@ public class Anomaly : MonoBehaviour
             Destroy(gameObject);
     }
         }
+    
+    void Size()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+
+        }
+    }
         
     
     
-    void OnTriggerStays2D(Collider other)
+    void OnTriggerStay2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
         {
