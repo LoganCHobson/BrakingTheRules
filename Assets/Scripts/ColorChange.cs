@@ -5,6 +5,7 @@ using UnityEngine;
 public class ColorChange : MonoBehaviour
 {
     Renderer m_paint;
+    Rigidbody body; 
 
 
     public int anomaly;
@@ -21,10 +22,20 @@ public class ColorChange : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            m_paint = GetComponent<Renderer>();
+            body = GetComponent<Rigidbody>();
+            body.isKinematic = false;
             
         }
     }
+
+    void Disappear()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Destroy(gameObject);
+    }
+        }
+        
     
     
     void OnTriggerStays2D(Collider other)
