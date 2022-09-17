@@ -8,7 +8,7 @@ public class GameOver : MonoBehaviour
         {
             Debug.Log("game over");
 
-            Destroy(other);
+            Destroy(gameObject);
         }
     }
 }
