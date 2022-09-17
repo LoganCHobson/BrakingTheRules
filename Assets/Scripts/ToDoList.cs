@@ -6,11 +6,11 @@ using TMPro;
 public class ToDoList : MonoBehaviour
 {
     public Anomaly AN;
-    private string name;
     //public TMP_Text text;
     public List<GameObject> objects;
 
     public List<TMP_Text> lables  = new List<TMP_Text>();
+
     
     // Start is called before the first frame update
 
