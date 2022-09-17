@@ -46,7 +46,14 @@ public class ColorChange : MonoBehaviour
             {
                 Switch();
             }
-            
+            if(anomaly == 2)
+            {
+                Floating();
+            }
+            if(anomaly == 3)
+            {
+                Disappear();
+            }
         }
        
     }
