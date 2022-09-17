@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-        pos = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxis("Vertical")).normalized;; //Getting the direction of the object
+        pos = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;; //Getting the direction of the object
         
        rb.velocity = pos * speed;
     }// End of Update
