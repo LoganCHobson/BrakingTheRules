@@ -10,7 +10,8 @@ public class ToDoList : MonoBehaviour
     public List<GameObject> objects;
 
     public List<TMP_Text> lables  = new List<TMP_Text>();
-
+    
+    public GameObject checkthing1, checkthing2, checkthing3, checkthing4;
     
     // Start is called before the first frame update
 
@@ -32,6 +33,21 @@ public class ToDoList : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(objects[0].GetComponent<Anomaly>().completed == true)
+        {
+            checkthing1.SetActive(true);
+        }
+        if(objects[1].GetComponent<Anomaly>().completed == true)
+        {
+            checkthing2.SetActive(true);
+        }
+        if(objects[2].GetComponent<Anomaly>().completed == true)
+        {
+            checkthing3.SetActive(true);
+        }
+        if(objects[3].GetComponent<Anomaly>().completed == true)
+        {
+            checkthing4.SetActive(true);
+        }
     }
 }
