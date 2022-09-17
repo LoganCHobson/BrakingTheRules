@@ -611,6 +611,7 @@ GameObject:
   - component: {fileID: 878102395}
   - component: {fileID: 878102398}
   - component: {fileID: 878102399}
+  - component: {fileID: 878102400}
   m_Layer: 0
   m_Name: BadBob
   m_TagString: Untagged
@@ -678,7 +679,7 @@ MonoBehaviour:
   startEndModifier:
     addPoints: 0
     exactStartPoint: 0
-    exactEndPoint: 3
+    exactEndPoint: 0
     useRaycasting: 0
     mask:
       serializedVersion: 2
@@ -727,7 +728,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 878102394}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fae993862b5dd714baa34448de1270ec, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -742,8 +743,29 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
+--- !u!50 &878102400
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878102394}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1012148602
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,8 +776,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1012148603}
   - component: {fileID: 1012148604}
-  - component: {fileID: 1012148605}
-  - component: {fileID: 1012148606}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -798,60 +818,8 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &1012148605
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012148602}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5}
-  m_EdgeRadius: 0
---- !u!61 &1012148606
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012148602}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.7}
-  m_EdgeRadius: 0
 --- !u!1 &1145780889
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,12 +832,14 @@ GameObject:
   - component: {fileID: 1145780893}
   - component: {fileID: 1145780894}
   - component: {fileID: 1145780892}
+  - component: {fileID: 1145780896}
+  - component: {fileID: 1145780895}
   m_Layer: 0
   m_Name: Bob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1145780890
 Transform:
@@ -972,6 +942,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!61 &1145780895
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145780889}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5}
+  m_EdgeRadius: 0
+--- !u!61 &1145780896
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145780889}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 0.7}
+  m_EdgeRadius: 0
 --- !u!1 &1201347444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,7 +1168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAACQn+v+bIi1WQIAABIFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1v2zAM/SuBzuvgGFm77ra5abpDm6DZ0IsvjETHQmTJkOR8tMh/HyXbsZdhpzCPj+Tjh/zBpHY1cm/swkrxbASybxMWbPZpMjif8Ahbo9fyHXvOmxS+DCSInFfw0hA+DWHOVOit5N/1VgVyQmCjZWFsNRdbzIzzjuAClENyWeNDtCboY8KO9HNzH0JOZKV3wXon6z6ZnMnkqD3agdoTe1rLajRXUNUoguSBnKYdezqNNE3NdIwgnBulpOuUMH+qY6cZ1K6hPoggJFBnsfz084yAEuW29CHzOHxZFA59J8rC6UFaGlGbl/0w7dwqcLtW2R5UEyp9jZralM//eG9ayYU11VNfdZqECr6UfPcKJw7Oj8Y6hh9GwuN4DqB2sFH4VqJ+MQtrGi3I6W0TQhuH6cPw99JYViLfDXgr9Qps6v8vJ/Rwjr0fMyWrTXDFORKwVibOO64eLW3mJwmOh+G6FIQGFb8d/oLt+II6x6O0zpOr61IHeRvT2EBl8ziz0E3jM2M1RrgTXaMG5U8rSuOvF3jlG5W98jxCeCtd8c7XP4GrkAgP/CS5cq3M4bIsV5rDM7py2XglNQ6ig+OF5pQZrdv7Gs+kD1s3tgA+Cts2Uvx9WgwApzxJbzf3cIsJT25mKNLNLSTplxnCXZGweHtSU5+gVq3Qbjy0NT0k13Rn/SdksrBQx1sXFg4L+V6Z0cilLsyaW0S9bDNchKOlIvQqxVxIGtAavZc67pt95EwZvkORXxLlsdP50VvIhyw5q+Xe+IDkLIvfjJwF+HLLK4t7iYdQvE92Zuc/UEsDBBQAAAgIAACQn+td2Aq2bQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrRSYmKqYbKBkVmSZaJZqkGyga5JaopRklmigZGpSWqieZqBUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAACQn+v+bIi1WQIAABIFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAACQn+td2Aq2bQAAAHgAAAAJACQAAAAAAAAAAAAAAKYCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAXgMAAAAA
+    dataString: UEsDBBQAAAgIAACQn+ujqaMYWgIAABcFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1T2zAQ/SsZnQvjeAKU3loTQg9AhpTh4svGWseayJJHHySByX/vSrZjNx1Olt97u3r7YX8yoWyDhdNmYQR/1BzZjwkLZ/ZtMpAPuIeNVivxgb3mTXBXBRFEzQs4oQmfhjCra3RGFD/VRgZxQqBXotSmnvMNZto6S3AJ0iJRRrsQrQj6nLA9PS5uQ8iBTulNOH3Q6TaZHOlYoHJoBmkv7GWtyqtCQt0gD5YHcZpeXnX6aStUVE6nSSJXaCmF7dwwd2hitRk01lMtJOACqLpoIb1MCahQbCoXXsfhz2Vp0XXGDBzuhKE2tXnZL932rga7bd29g/Thpu/RVZvy8T/2Yhrp0uj6ob91moQbXCWK7QscCrBu1NoxfDcYn8YW7UBuYS3xrUL1pBdGe8WJdMaHUG8xvRteT4VlFRbbAW+tnoG++XpAoYZjrH2fSVGvY+dnLbCSOvY7jh8NzeY3GY7LYbsUhAYXrxb/wGa8RR1xL4x1RHVVqmBvrb0JUjaPPQvVeJdpo9CMMzSoQLrDkvK48wmecV9H3UP4YLrbO67/Ds5CIjzok+SMWurdaVq20rtHtNWzd1IoHFodiCdqVKaVahdsXFIftvKmhGIUtvGC/7tbDACnRZJer2/hGpMiuZghT9fXkKRXM4SbMmFx+YSiOkEuW6Nde2hsakiuaNH6/8hkYaCJy84N7Bbio9Z2UApV6lVhENVzm+FkHA1dQh8mn3NBDVqhc0LFgbPPnEldbJHnp0R5rHS+dwbyIUvOGvGuXUBylsUfR84CfFrmpcF3gbtweZ/syI5/AVBLAwQUAAAICAAAkJ/rXdgKtm0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0UmJiqmGygZFZkmWiWapBsoGuSWqKUZJZooGRqUlqonmagVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAkJ/ro6mjGFoCAAAXBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAkJ/rXdgKtm0AAAB4AAAACQAkAAAAAAAAAAAAAACnAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAF8DAAAAAA==
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -1330,7 +1352,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1747133567}
   - component: {fileID: 1747133569}
-  - component: {fileID: 1747133570}
   m_Layer: 0
   m_Name: BadBobGFX
   m_TagString: Untagged
@@ -1405,27 +1426,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &1747133570
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747133566}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!1 &1756656045
 GameObject:
   m_ObjectHideFlags: 0
