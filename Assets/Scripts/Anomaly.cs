@@ -2,13 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColorChange : MonoBehaviour
+public class Anomaly : MonoBehaviour
 {
     Renderer m_paint;
     Rigidbody body; 
+    public int anomalySetter;
 
+    public ToDoList TDL;
 
-    public int anomaly;
+    public string name;
+    public bool completed;
+
+    void Awake()
+    {
+        TDL.objects.Add(gameObject);
+    }
+
+    void update()
+    {
+        if(completed == true)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    
     void Switch()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -42,15 +60,15 @@ public class ColorChange : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            if(anomaly == 1)
+            if(anomalySetter == 1)
             {
                 Switch();
             }
-            if(anomaly == 2)
+            if(anomalySetter == 2)
             {
                 Floating();
             }
-            if(anomaly == 3)
+            if(anomalySetter == 3)
             {
                 Disappear();
             }
