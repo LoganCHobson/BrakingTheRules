@@ -67,7 +67,7 @@ public class CustomAIMovementArcher : MonoBehaviour
             reachedEndOfPath = false;
         }
 
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position);
         force = direction * speed * Time.deltaTime;
         rb.AddForce(force);
 
@@ -123,14 +123,14 @@ public class CustomAIMovementArcher : MonoBehaviour
     */
     void Ranged()
     {
-        int layerMask = 1 << 9;
+       // int layerMask = 1 << 9;
 
        
 
         targetPos = target.position; //Setting target pos to player position as a vector2
         Vector2 Direction; //Declaring direction vec2
         Direction = targetPos - (Vector2)transform.position; //Getting the difference of the two positions
-        RaycastHit2D ray = Physics2D.Raycast(raycastPos.transform.position, Direction, layerMask);//Shooting a ray cast array of atleast two to see what we hit at the bow position heading in the direction of the difference
+        RaycastHit2D ray = Physics2D.Raycast(raycastPos.transform.position, Direction);//Shooting a ray cast array of atleast two to see what we hit at the bow position heading in the direction of the difference
         Debug.Log(ray.transform.gameObject.name); 
         if (ray.transform.gameObject != null && ray.transform.gameObject.tag == "Player") //If ray is not null, which means if it is there, and so long as tag is no player
         {
