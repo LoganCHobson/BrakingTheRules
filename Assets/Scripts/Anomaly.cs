@@ -107,7 +107,7 @@ public class Anomaly : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            anime.SetTrigger("triggerGrowth");
+           // anime.SetTrigger("triggerGrowth");
         }
     }
         

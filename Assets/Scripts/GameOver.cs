@@ -1,4 +1,7 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
@@ -7,8 +10,7 @@ public class GameOver : MonoBehaviour
         if (other.tag==("Enemy"))
         {
             Debug.Log("game over");
-
-            Destroy(gameObject);
+            SceneManager.LoadScene("Title");
         }
     }
 }
