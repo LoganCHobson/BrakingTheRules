@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ToDoList : MonoBehaviour
 {
-    private int win;
+    public int win;
     public Anomaly AN;
     //public TMP_Text text;
     public List<GameObject> objects;
@@ -34,45 +35,45 @@ public class ToDoList : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(win == 7)
+        if(objects.Count == 0)
         {
-            //win
+            SceneManager.LoadScene("Win");
         }
        
         if(objects[0].GetComponent<Anomaly>().completed == true)
         {
             checkthing1.SetActive(true);
-            win++;
+            
         }
         if(objects[1].GetComponent<Anomaly>().completed == true)
         {
             checkthing2.SetActive(true);
-            win++;
+            
         }
         if(objects[2].GetComponent<Anomaly>().completed == true)
         {
             checkthing3.SetActive(true);
-            win++;
+            
         }
         if(objects[3].GetComponent<Anomaly>().completed == true)
         {
             checkthing4.SetActive(true);
-            win++;
+            
         }
         if (objects[4].GetComponent<Anomaly>().completed == true)
         {
             checkthing5.SetActive(true);
-            win++;
+            
         }
         if (objects[5].GetComponent<Anomaly>().completed == true)
         {
             checkthing6.SetActive(true);
-            win++;
+            
         }
         if (objects[6].GetComponent<Anomaly>().completed == true)
         {
             checkthing7.SetActive(true);
-            win++;
+            
         }
 
     }

@@ -53,9 +53,10 @@ public class Anomaly : MonoBehaviour
 
             if (fade <= 0f)
             {
+               
                 completed = true;
                 fade = 0f;
-                
+                TDL.objects.Remove(gameObject);
                 Destroy(gameObject, 1);
             }
 
@@ -69,9 +70,11 @@ public class Anomaly : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
            m_paint = GetComponent<Renderer>();
-            m_paint.material.color = Color.red;
+            m_paint.material.color = Color.green;
                 completed = true;
-        }
+                TDL.objects.Remove(gameObject);
+
+            }
     }
 
     void Floating()
@@ -80,7 +83,9 @@ public class Anomaly : MonoBehaviour
         {
             body = GetComponent<Rigidbody2D>();
             body.isKinematic = false;
+                
                 completed = true;
+                TDL.objects.Remove(gameObject);
             }
     }
 
@@ -89,11 +94,9 @@ public class Anomaly : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isDissolving = true;
-                completed = true;
+               
             }
-        
         }
-
     }
     
     void Size()
