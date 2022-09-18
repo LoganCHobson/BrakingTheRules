@@ -8,6 +8,7 @@ public class Dissolve : MonoBehaviour
 
     bool isDissolving = false;
     float fade = 1f;
+    public float fadeSpeed = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class Dissolve : MonoBehaviour
 
         if(isDissolving)
         {
-            fade -= Time.deltaTime / 5;
+            fade -= Time.deltaTime * fadeSpeed;
 
             if(fade <= 0f)
             {
