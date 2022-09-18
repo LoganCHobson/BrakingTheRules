@@ -44,6 +44,10 @@ public class Anomaly : MonoBehaviour
             {
                 Disappear();
             }
+            if (anomalySetter == 4)
+            {
+                Size();
+            }
         }
 
         //Code for dissolving shader
@@ -103,7 +107,7 @@ public class Anomaly : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
+            anime.SetTrigger("triggerGrowth");
         }
     }
         
