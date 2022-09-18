@@ -12,19 +12,24 @@ public class Anomaly : MonoBehaviour
 
     public string name;
     public bool completed;
-    private bool inRange; 
+    private bool inRange;
+
+    Material material;
+
+    bool isDissolving = false;
+    float fade = 1f;
+    public float fadeSpeed = 1;
 
     void Awake()
     {
         TDL.objects.Add(gameObject);
+        material = GetComponent<SpriteRenderer>().material;
     }
 
     void Update()
     {
-        if(completed == true)
-        {
-            gameObject.SetActive(false);
-        }
+
+        
         if (inRange == true)
         {
             if (anomalySetter == 1)
@@ -40,8 +45,23 @@ public class Anomaly : MonoBehaviour
                 Disappear();
             }
         }
-        
-    }
+
+        //Code for dissolving shader
+        if (isDissolving)
+        {
+            fade -= Time.deltaTime * fadeSpeed;
+
+            if (fade <= 0f)
+            {
+                completed = true;
+                fade = 0f;
+                
+                Destroy(gameObject, 1);
+            }
+
+            material.SetFloat("_Fade", fade);
+
+        }
 
     
     void Switch()
@@ -50,6 +70,7 @@ public class Anomaly : MonoBehaviour
         {
            m_paint = GetComponent<Renderer>();
             m_paint.material.color = Color.red;
+                completed = true;
         }
     }
 
@@ -59,17 +80,21 @@ public class Anomaly : MonoBehaviour
         {
             body = GetComponent<Rigidbody2D>();
             body.isKinematic = false;
-            
-        }
+                completed = true;
+            }
     }
 
     void Disappear()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Destroy(gameObject);
-    }
+            isDissolving = true;
+                completed = true;
+            }
+        
         }
+
+    }
     
     void Size()
     {
