@@ -4185,6 +4185,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &517707056 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 101047479295024440, guid: 922fc88de1f4efd449ddfb18dec57f85, type: 3}
+  m_PrefabInstance: {fileID: 690807805}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &517707059
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517707056}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e1903cfe0216be248b2e449c226ed0dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &518663932
 GameObject:
   m_ObjectHideFlags: 0
@@ -5520,6 +5545,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 101047479295024442, guid: 922fc88de1f4efd449ddfb18dec57f85, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1092594592, guid: db4c4198dabc0bc42986a4bc70edfb5a, type: 3}
+    - target: {fileID: 101047479295024442, guid: 922fc88de1f4efd449ddfb18dec57f85, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 101047479295024442, guid: 922fc88de1f4efd449ddfb18dec57f85, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 101047479295024442, guid: 922fc88de1f4efd449ddfb18dec57f85, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 101047480264886820, guid: 922fc88de1f4efd449ddfb18dec57f85, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 517707059}
     - target: {fileID: 101047480264886820, guid: 922fc88de1f4efd449ddfb18dec57f85, type: 3}
       propertyPath: speed
       value: 850
@@ -17585,7 +17630,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -50
+  m_SortingOrder: -200
   m_Sprite: {fileID: 21300000, guid: 241ee627f250fb14482872b0de1f0bf8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

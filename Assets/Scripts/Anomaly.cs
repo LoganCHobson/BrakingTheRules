@@ -73,6 +73,7 @@ public class Anomaly : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+                
            m_paint = GetComponent<Renderer>();
             m_paint.material.color = Color.green;
                 completed = true;

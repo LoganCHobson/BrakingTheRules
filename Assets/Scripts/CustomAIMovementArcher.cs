@@ -5,7 +5,7 @@ using Pathfinding;
 
 public class CustomAIMovementArcher : MonoBehaviour
 {
-   
+    public Animator anim;
     private Transform target;
 
     public float radius;
@@ -49,6 +49,12 @@ public class CustomAIMovementArcher : MonoBehaviour
 
     }//End of Start
 
+    void Update()
+    {
+
+        anim.SetFloat("dirx", rb.velocity.normalized.x);
+        anim.SetFloat("diry", rb.velocity.normalized.y);
+    }
     void FixedUpdate() //Ideal when working with physics
     {
 
