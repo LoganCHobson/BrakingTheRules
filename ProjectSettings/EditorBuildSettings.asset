@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Logan'sLevelOnePrototype.unity
     guid: bf608f63b79b853468b976f01245d3d7
+  - enabled: 1
+    path: Assets/Scenes/win.unity
+    guid: 64d4f327c43023546a08bdad284dfca3
+  - enabled: 1
+    path: Assets/Scenes/lose.unity
+    guid: 788093bf9f738ee4bb9c37e7608c4753
   m_configObjects: {}

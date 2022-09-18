@@ -37,7 +37,7 @@ public class ToDoList : MonoBehaviour
     {
         if(objects.Count == 0)
         {
-            SceneManager.LoadScene("Win");
+            SceneManager.LoadScene("win");
         }
        
         if(objects[0].GetComponent<Anomaly>().completed == true)

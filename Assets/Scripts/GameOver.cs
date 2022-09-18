@@ -10,7 +10,7 @@ public class GameOver : MonoBehaviour
         if (other.tag==("Enemy"))
         {
             Debug.Log("game over");
-            SceneManager.LoadScene("crowstestscene");
+            SceneManager.LoadScene("lose");
         }
     }
 }
