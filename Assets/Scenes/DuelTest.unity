@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 528794699}
   - component: {fileID: 528794700}
   - component: {fileID: 528794701}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 542234734}
   - component: {fileID: 542234735}
   - component: {fileID: 542234736}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -627,6 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6cc2b8788825484a84396778605e705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   speed: 10
 --- !u!70 &1379652287
 CapsuleCollider2D:
@@ -746,7 +747,7 @@ GameObject:
   - component: {fileID: 1907109191}
   - component: {fileID: 1907109192}
   - component: {fileID: 1907109193}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

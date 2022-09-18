@@ -12,6 +12,7 @@ public class Anomaly : MonoBehaviour
 
     public string name;
     public bool completed;
+    private bool inRange; 
 
     void Awake()
     {
@@ -24,6 +25,22 @@ public class Anomaly : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+        if (inRange == true)
+        {
+            if (anomalySetter == 1)
+            {
+                Switch();
+            }
+            if (anomalySetter == 2)
+            {
+                Floating();
+            }
+            if (anomalySetter == 3)
+            {
+                Disappear();
+            }
+        }
+        
     }
 
     
@@ -64,23 +81,27 @@ public class Anomaly : MonoBehaviour
         
     
     
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
         {
-            if(anomalySetter == 1)
-            {
-                Switch();
-            }
-            if(anomalySetter == 2)
-            {
-                Floating();
-            }
-            if(anomalySetter == 3)
-            {
-                Disappear();
-            }
+            inRange = true;
         }
        
     }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            inRange = false;
+        }
+
+    }
+
 }
+
+
+
+   
+
