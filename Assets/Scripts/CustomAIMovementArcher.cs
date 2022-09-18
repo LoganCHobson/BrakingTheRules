@@ -24,6 +24,7 @@ public class CustomAIMovementArcher : MonoBehaviour
     bool reachedEndOfPath = false;
     Seeker seeker;
     Rigidbody2D rb;
+    public Vector2 targetPos;
 
     public Transform[] moveSpots;
     private int randomSpot;
@@ -112,19 +113,31 @@ public class CustomAIMovementArcher : MonoBehaviour
         pathUpdateSpeed = Random.Range(.1f, 1f);
         Debug.Log(pathUpdateSpeed);
     }
-
+    /*void OnDrawGizmosSelected()
+    {
+        // Draws a 5 unit long red line in front of the object
+        Gizmos.color = Color.red;
+        Vector3 direction = Direction;
+        Gizmos.DrawRay(transform.position, direction);
+    }
+    */
     void Ranged()
     {
-        Vector2 targetPos = target.position; //Setting target pos to player position as a vector2
+        int layerMask = 1 << 9;
+
+       
+
+        targetPos = target.position; //Setting target pos to player position as a vector2
         Vector2 Direction; //Declaring direction vec2
         Direction = targetPos - (Vector2)transform.position; //Getting the difference of the two positions
-        RaycastHit2D[] ray = Physics2D.RaycastAll(raycastPos.transform.position, Direction); //Shooting a ray cast array of atleast two to see what we hit at the bow position heading in the direction of the difference
-        if (ray[0].transform.gameObject != null && ray[0].transform.gameObject.tag == "Player") //If ray is not null, which means if it is there, and so long as tag is no player
+        RaycastHit2D ray = Physics2D.Raycast(raycastPos.transform.position, Direction, layerMask);//Shooting a ray cast array of atleast two to see what we hit at the bow position heading in the direction of the difference
+        Debug.Log(ray.transform.gameObject.name); 
+        if (ray.transform.gameObject != null && ray.transform.gameObject.tag == "Player") //If ray is not null, which means if it is there, and so long as tag is no player
         {
-            Debug.Log(ray[0].transform.gameObject.name); //Tell us what the raycast is
+             //Tell us what the raycast is
             seeker.StartPath(rb.position, target.position, OnPathComplete); //move
         }
-            if (ray[0].transform.gameObject != null && ray[0].transform.gameObject.tag != "Player" && currentWaypoint >= path.vectorPath.Count) //If ray is not null, which means if it is there, and so long as tag is no player
+            if (ray.transform.gameObject != null && ray.transform.gameObject.tag != "Player" && currentWaypoint >= path.vectorPath.Count) //If ray is not null, which means if it is there, and so long as tag is no player
             {
                 seeker.StartPath(rb.position, moveSpots[randomSpot].position, OnPathComplete);
 
