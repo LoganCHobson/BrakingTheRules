@@ -49,5 +49,6 @@ public class ToDoList : MonoBehaviour
         {
             checkthing4.SetActive(true);
         }
+        
     }
 }
