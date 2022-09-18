@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class CustomAIMovementArcher : MonoBehaviour
+public class FollowEyes : MonoBehaviour
 {
     private Transform target;
     private Transform playerTransform;
     private Transform bowTransform;
     private bool shoot;
-
-    public float radius;
     
 
     public Transform firingpoint;
@@ -28,7 +26,6 @@ public class CustomAIMovementArcher : MonoBehaviour
 
     private Vector2 force;
     
-     IAstarAI ai;
     Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
@@ -45,7 +42,7 @@ public class CustomAIMovementArcher : MonoBehaviour
             Randomizer();
         }
         
-        player = GameObject.Find("Player");
+        //player = GameObject.Find("Player");
         target = player.GetComponent<Transform>();
         bowTransform = bow.GetComponent<Transform>();
 
@@ -138,11 +135,13 @@ public class CustomAIMovementArcher : MonoBehaviour
         Vector2 Direction;
         Direction = targetPos - (Vector2)transform.position;
         RaycastHit2D ray = Physics2D.Raycast(bow.transform.position, Direction);
-        if(ray.transform.gameObject != null && ray.transform.gameObject.tag != "Player")
+        if(ray.transform.gameObject != null && ray.transform.gameObject.tag == "Player")
         {
             Debug.Log(ray.transform.name);
+            bow.transform.up = Direction;
+            path = null;
         
-            ai.destination = PickRandomPoint();
+            shoot = true;
         }
         else
         {
@@ -166,12 +165,12 @@ public class CustomAIMovementArcher : MonoBehaviour
             }
         }
         
-        Vector3 PickRandomPoint () 
+        public void Shoot()
         {
-            var point = Random.insideUnitSphere * radius;
-
-            point.y = 0;
-            point += ai.position;
-            return point;
-    }
+            if(shoot == true)
+            {
+                Instantiate(arrow, firingpoint.position, firingpoint.rotation);
+            }
+           
+        }
 }
