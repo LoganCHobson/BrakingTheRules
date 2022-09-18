@@ -1534,7 +1534,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339074847}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.35, y: 0, z: 0}
+  m_LocalPosition: {x: 5, y: 1.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2109,7 +2109,6 @@ MonoBehaviour:
   - {fileID: 727611130}
   - {fileID: 1889535497}
   - {fileID: 295193768}
-  check: 00000000
   checkthing1: {fileID: 1363159411}
   checkthing2: {fileID: 214173538}
   checkthing3: {fileID: 2134006735}

@@ -15,7 +15,7 @@ public class Anomaly : MonoBehaviour
 
     void Awake()
     {
-        //TDL.objects.Add(gameObject);
+        TDL.objects.Add(gameObject);
     }
 
     void Update()
